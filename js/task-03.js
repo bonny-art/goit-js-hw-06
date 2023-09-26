@@ -17,11 +17,16 @@ const imgListEl = document.querySelector('.gallery');
 imgListEl.style.display = 'flex';
 imgListEl.style.flexWrap = 'wrap';
 imgListEl.style.gap = '10px';
+imgListEl.classList.add('gallery-style');
 
-console.dir(imgListEl);
-
-const li = `
-      <li class="">
-        <img src="" alt="" width="" />
+const imgListMarkup = images
+  .map(
+    ({ url, alt }) => `
+      <li class="gallery-item">
+        <img src="${url}" alt="${alt}" width="600" />
       </li>
-      `;
+      `
+  )
+  .join('');
+
+imgListEl.insertAdjacentHTML('afterbegin', imgListMarkup);
