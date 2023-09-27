@@ -13,7 +13,7 @@ function handlerCreate() {
 }
 
 function handlerDestroy() {
-  boxes.innerHTML = '';
+  destroyBoxes();
 }
 
 function createBoxes(amount) {
@@ -27,6 +27,10 @@ function createBoxes(amount) {
   }
 
   return boxes;
+}
+
+function destroyBoxes() {
+  boxes.innerHTML = '';
 }
 
 function getRandomHexColor() {
